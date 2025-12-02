@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    <link rel="stylesheet" href="./index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <main>
+        <div id="main-cont-1">      
+            <div id="logo">
+                <img src="https://i.pinimg.com/736x/77/0b/80/770b805d5c99c7931366c2e84e88f251.jpg" alt="logo">
+                <h1>Weather</h1>
+            </div>
+
+            <div class="sidenav" >
+                <button id="dashboard" onclick="sidenav(id)">Dashboard</button>
+            </div>
+
+            <div class="sidenav" >
+                <button id="map" onclick="sidenav(id)">Map</button>
+            </div>
+            <div class="sidenav" >
+                <button id="savedloc" onclick="sidenav(id)"> Saved Location</button>
+            </div>
+            <div  class="sidenav" >
+                <button id="logout" onclick="sidenav(id)">Logout</button>
+            </div>
+
+        </div>
+        <div id="main-cont-2">
+            <div id="searchbar-cont">
+                    <form onsubmit="searchTrigger(event)">
+                        <input type="text" name="search" id="search" placeholder=" &#x1F50D; Search your city ...">
+                        <input type="submit" value="Search">
+                    </form>
+            </div>
+
+            <div id="main-card">
+                <div id="main-card-min1">
+                    <p id="location"><i class="fa fa-map-marker"></i> <span id="locationspan">Search for a city</span></p>
+                    <p id="date"></p>
+                </div>
+                <div id="main-card-min2">
+                    <h3 id="temp"></h3>
+                    <p id="tempdesc"></p>
+                </div>
+            </div>
+
+            <div id="error">
+                <h4 id="errormessage"></h4>
+            </div>
+
+            <div id="components">
+                <div class="c1" id="wind">
+                    <h5 id="windtext"></h5>
+                    <hr width=15%>
+                    <p id="winddes"></p>
+                    <h5 id="windval"></h5>
+                </div>
+                <div class="c1" id="humidity">
+                    <h5 id="humiditytext"></h5>
+                    <p id="humiditydes"></p>
+                    <h5 id="humidityval"></h5>
+                </div>
+                <div class="c1" id="pressure">
+                    <h5 id="pressuretext"></h5>
+                    <p id="pressuredes"></p>
+                    <h5 id="pressureval"></h5>
+                </div>
+                <div class="c1" id="maxmintemp">
+                    <h5 id="maxmintext"></h5>
+                    <div>
+                        <h5 id="maxtemptext"></h5>
+                        <p id="maxtempval"></p>
+                    </div>
+                     <div>
+                        <h5 id="mintemptext"></h5>
+                        <p id="mintempval"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main-cont-3"></div>
+    </main>
+   
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
