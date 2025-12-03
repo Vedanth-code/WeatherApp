@@ -54,7 +54,7 @@ async function fetchWeather(city) {
             text = "It's getting hot. Stay hydrated.."
             img = 'https://images.unsplash.com/photo-1651407295090-d5153b835c4d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEJyaWdodCUyMHN1biUyMHdpdGglMjBhJTIwc2xpZ2h0JTIwaGF6ZSUyMG9yJTIwbGlnaHQlMjB3aXNwcyUyMG9mJTIwY2xvdWRzLnxlbnwwfHwwfHx8MA%3D%3D';
 
-        } else if (data.main.feels_like < 35) {
+        } else {
             text = "Hot weather! Take precautions."
             img = 'https://images.unsplash.com/photo-1447601932606-2b63e2e64331?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SGFyc2glMkMlMjBnbGFyaW5nJTIwc3VubGlnaHQlMkMlMjBtaXJhZ2UlMjBlZmZlY3RzJTIwb3ZlciUyMGFzcGhhbHQlMjBvciUyMGJhcnJlbnxlbnwwfHwwfHx8MA%3D%3D';
 
