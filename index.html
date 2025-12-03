@@ -12,38 +12,39 @@
 
 <body>
     <main>
-        <div id="main-cont-1">      
+        <div id="main-cont-1">
             <div id="logo">
                 <img src="https://i.pinimg.com/736x/77/0b/80/770b805d5c99c7931366c2e84e88f251.jpg" alt="logo">
                 <h1>Weather</h1>
             </div>
 
-            <div class="sidenav" >
+            <div class="sidenav">
                 <button id="dashboard" onclick="sidenav(id)">Dashboard</button>
             </div>
 
-            <div class="sidenav" >
+            <div class="sidenav">
                 <button id="map" onclick="sidenav(id)">Map</button>
             </div>
-            <div class="sidenav" >
+            <div class="sidenav">
                 <button id="savedloc" onclick="sidenav(id)"> Saved Location</button>
             </div>
-            <div  class="sidenav" >
+            <div class="sidenav">
                 <button id="logout" onclick="sidenav(id)">Logout</button>
             </div>
 
         </div>
         <div id="main-cont-2">
             <div id="searchbar-cont">
-                    <form onsubmit="searchTrigger(event)">
-                        <input type="text" name="search" id="search" placeholder=" &#x1F50D; Search your city ...">
-                        <input type="submit" value="Search">
-                    </form>
+                <form onsubmit="searchTrigger(event)">
+                    <input type="text" name="search" id="search" placeholder=" &#x1F50D; Search your city ...">
+                    <input type="submit" value="Search">
+                </form>
             </div>
 
             <div id="main-card">
                 <div id="main-card-min1">
-                    <p id="location"><i class="fa fa-map-marker"></i> <span id="locationspan">Search for a city</span></p>
+                    <p id="location"><i class="fa fa-map-marker"></i> <span id="locationspan">Search for a city</span>
+                    </p>
                     <p id="date"></p>
                 </div>
                 <div id="main-card-min2">
@@ -56,39 +57,47 @@
                 <h4 id="errormessage"></h4>
             </div>
 
+
+        </div>
+        <div id="main-cont-3">
             <div id="components">
                 <div class="c1" id="wind">
                     <h5 id="windtext"></h5>
-                    <hr width=15%>
+                    <hr width=35%>
                     <p id="winddes"></p>
                     <h5 id="windval"></h5>
                 </div>
                 <div class="c1" id="humidity">
                     <h5 id="humiditytext"></h5>
+                    <hr width=35%>
+
                     <p id="humiditydes"></p>
                     <h5 id="humidityval"></h5>
                 </div>
                 <div class="c1" id="pressure">
                     <h5 id="pressuretext"></h5>
+                    <hr width=35%>
+
                     <p id="pressuredes"></p>
                     <h5 id="pressureval"></h5>
                 </div>
                 <div class="c1" id="maxmintemp">
                     <h5 id="maxmintext"></h5>
+                    <hr width=35%>
+
                     <div>
                         <h5 id="maxtemptext"></h5>
                         <p id="maxtempval"></p>
                     </div>
-                     <div>
+                    <div>
                         <h5 id="mintemptext"></h5>
                         <p id="mintempval"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="main-cont-3"></div>
     </main>
-   
+
 
     <script src="./index.js"></script>
 

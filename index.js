@@ -1,13 +1,19 @@
 console.log("Hi");
 const apiKey = '1b6a59d8ef8bf4dbe6dd40e48e9c612b';
+
+document.getElementById('dashboard').style.borderRight = " 4px solid black";
+
+
 async function fetchWeather(city) {
     let data = undefined;
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKey}`;
 
     try {
+        document.getElementById("error").style.display = "none";
+
         const response = await fetch(url);
-        if(response.status == 401){
+        if (response.status == 401) {
             throw new Error("Network Issues Come again later ..")
         }
         if (!response.ok) {
@@ -75,7 +81,7 @@ async function fetchWeather(city) {
         document.getElementById("pressureval").textContent = data.main.pressure + "hpa";
 
 
-        document.getElementById("maxmintext").textContent = "Max and Min Temperature";
+        document.getElementById("maxmintext").textContent = "Max & Min Temperature";
 
         document.getElementById("maxtemptext").textContent = "Max temperature: ";
         document.getElementById("maxtempval").textContent = data.main.temp_max + "\u00B0C";
@@ -86,37 +92,37 @@ async function fetchWeather(city) {
 
     } catch (error) {
         document.getElementById("error").style.display = "flex";
-        document.getElementById("errormessage").textContent= error;
+        document.getElementById("errormessage").textContent = error;
         console.error('There was a problem with the fetch operation:', error);
 
 
-        
-    // Clear previous weather data from UI
-    document.getElementById("locationspan").textContent = "City Not Found";
-    document.getElementById("date").textContent = "";
-    document.getElementById("temp").textContent = "";
-    document.getElementById("tempdesc").textContent = "";
-    document.getElementById("windtext").textContent = "";
-    document.getElementById("winddes").textContent = "";
-    document.getElementById("windval").textContent = "";
-    document.getElementById("humiditytext").textContent = "";
-    document.getElementById("humiditydes").textContent = "";
-    document.getElementById("humidityval").textContent = "";
-    document.getElementById("pressuretext").textContent = "";
-    document.getElementById("pressuredes").textContent = "";
-    document.getElementById("pressureval").textContent = "";
-    document.getElementById("maxmintext").textContent = "";
-    document.getElementById("maxtemptext").textContent = "";
-    document.getElementById("maxtempval").textContent = "";
-    document.getElementById("mintemptext").textContent = "";
-    document.getElementById("mintempval").textContent = "";
 
-    // Optionally hide weather container or reset background
-    document.getElementById('main-card-min2').style.display = "none";
-    document.getElementById('main-card').style.backgroundImage = "";
-    document.getElementById('main-card').style.height = "";
+        // Clear previous weather data from UI
+        document.getElementById("locationspan").textContent = "City Not Found";
+        document.getElementById("date").textContent = "";
+        document.getElementById("temp").textContent = "";
+        document.getElementById("tempdesc").textContent = "";
+        document.getElementById("windtext").textContent = "";
+        document.getElementById("winddes").textContent = "";
+        document.getElementById("windval").textContent = "";
+        document.getElementById("humiditytext").textContent = "";
+        document.getElementById("humiditydes").textContent = "";
+        document.getElementById("humidityval").textContent = "";
+        document.getElementById("pressuretext").textContent = "";
+        document.getElementById("pressuredes").textContent = "";
+        document.getElementById("pressureval").textContent = "";
+        document.getElementById("maxmintext").textContent = "";
+        document.getElementById("maxtemptext").textContent = "";
+        document.getElementById("maxtempval").textContent = "";
+        document.getElementById("mintemptext").textContent = "";
+        document.getElementById("mintempval").textContent = "";
 
-    document.getElementById("components").style.display = "none";
+        // Optionally hide weather container or reset background
+        document.getElementById('main-card-min2').style.display = "none";
+        document.getElementById('main-card').style.backgroundImage = "";
+        document.getElementById('main-card').style.height = "";
+
+        document.getElementById("components").style.display = "none";
     }
 
 
@@ -131,12 +137,12 @@ function searchTrigger(event) {
 
 }
 
-function sidenav(id){
-        document.getElementById('map').style.borderRight="";
-    document.getElementById('dashboard').style.borderRight="";
-    document.getElementById('savedloc').style.borderRight="";
-    document.getElementById('logout').style.borderRight="";
+function sidenav(id) {
+    document.getElementById('map').style.borderRight = "";
+    document.getElementById('dashboard').style.borderRight = "";
+    document.getElementById('savedloc').style.borderRight = "";
+    document.getElementById('logout').style.borderRight = "";
 
-    document.getElementById(id).style.borderRight=" 4px solid black";
+    document.getElementById(id).style.borderRight = " 4px solid black";
 
 }

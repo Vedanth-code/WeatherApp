@@ -1,20 +1,20 @@
 main {
     display: flex;
     align-items: stretch;
-    min-height: 100vh;  
+    min-height: 100vh;
 
 }
 
-h5{
-        font-size: 2em;
+h5 {
+    font-size: 2vh;
 
 }
 
-h3{
-    font-size: 2em;
+h3 {
+    font-size: 2vh;
 }
 
-p{
+p {
     font-size: 2em;
 
 }
@@ -24,7 +24,7 @@ p{
 ------------------------------------ */
 
 #main-cont-1 {
-      flex: 1;
+    flex: 1;
 
     flex-basis: 15%;
     min-height: 100vh;
@@ -42,16 +42,17 @@ p{
 }
 
 #main-cont-1 img {
-    height: 50px    ;
+    height: 50px;
     width: 50px;
 }
 
-#main-cont-1 button{
+#main-cont-1 button {
     font-size: 1.4em;
 }
+
 /* ------------------------------------- */
 
-.sidenav{
+.sidenav {
     width: 100%;
 }
 
@@ -60,15 +61,13 @@ p{
     background-color: white;
     cursor: pointer;
     border: none;
-
-
 }
 
 /* -------------------------------------
 ---------------------------------------- */
 #main-cont-2 {
     flex: 1;
-    flex-basis: 65%;
+    flex-basis: 45%;
     min-height: 100vh;
     position: relative;
 }
@@ -144,12 +143,13 @@ p{
 
 }
 
-#temp{
+#temp {
     font-size: 6em;
 }
+
 /* ------------------------------------------------ */
 
-#error{
+#error {
     display: none;
     justify-content: center;
     align-items: center;
@@ -160,19 +160,20 @@ p{
     margin-bottom: 30%;
 }
 
-#error h4{
-        font-size: xx-large;
-        color: red;
+#error h4 {
+    font-size: xx-large;
+    color: red;
 }
 
 /* --------------------------------------------- */
 
 #components {
     display: none;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 0.5fr;
     gap: 5%;
-    margin: 5%;
+    margin: 10% 5%;
+
 }
 
 .c1 {
@@ -182,13 +183,28 @@ p{
     align-items: center;
     border-radius: 30px;
     background-color: rgb(224, 239, 245);
+    height: 40vh;
 
 }
 
+.c1 h5,
+.c1 p {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 1vh;
+}
+
+.c1 h5{
+    font-size: 3vh;
+}
+
+.c1 p{
+    font-size: 3vh;
+}
 /* ----------------------------------------
 ---------------------------------------- */
 #main-cont-3 {
-    flex:1;
-    flex-basis: 20%;
+    flex: 1;
+    flex-basis: 40%;
     min-height: 100vh;
 }
