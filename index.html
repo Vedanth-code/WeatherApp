@@ -11,13 +11,22 @@
 </head>
 
 <body>
+    <nav>
+
+        <div id="logo">
+            <img src="https://i.pinimg.com/736x/77/0b/80/770b805d5c99c7931366c2e84e88f251.jpg" alt="logo">
+            <h1>Weather</h1>
+        </div>
+
+        <div id="searchbar-cont">
+                <form onsubmit="searchTrigger(event)">
+                    <input type="text" name="search" id="search" placeholder=" &#x1F50D;  Search your city ...">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+    </nav>
     <main>
         <div id="main-cont-1">
-            <div id="logo">
-                <img src="https://i.pinimg.com/736x/77/0b/80/770b805d5c99c7931366c2e84e88f251.jpg" alt="logo">
-                <h1>Weather</h1>
-            </div>
-
             <div class="sidenav">
                 <button id="dashboard" onclick="sidenav(id)">Dashboard</button>
             </div>
@@ -34,12 +43,7 @@
 
         </div>
         <div id="main-cont-2">
-            <div id="searchbar-cont">
-                <form onsubmit="searchTrigger(event)">
-                    <input type="text" name="search" id="search" placeholder=" &#x1F50D; Search your city ...">
-                    <input type="submit" value="Search">
-                </form>
-            </div>
+            
 
             <div id="main-card">
                 <div id="main-card-min1">
@@ -57,6 +61,9 @@
                 <h4 id="errormessage"></h4>
             </div>
 
+            <div id="welcome">
+                <h1>Welcome To Weather App</h1>
+            </div>
 
         </div>
         <div id="main-cont-3">
@@ -95,12 +102,17 @@
                     </div>
                 </div>
             </div>
+
+            <div id="stories">
+                <h2>Top Stories</h2>
+            </div>
         </div>
+
+
+        <script src="./index.js"></script>
+
+
     </main>
-
-
-    <script src="./index.js"></script>
-
 </body>
 
 </html>

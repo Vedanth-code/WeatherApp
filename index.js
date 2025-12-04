@@ -4,6 +4,39 @@ const apiKey = '1b6a59d8ef8bf4dbe6dd40e48e9c612b';
 document.getElementById('dashboard').style.borderRight = " 4px solid black";
 
 
+let stories = [
+    {
+        id: 1,
+        weather: "winter weather",
+        headline: "Polar vortex to bring triple whammy of Arctic cold to US",
+        time: "27min ago",
+        img: "https://cms.accuweather.com/wp-content/uploads/2025/12/page-2_75647d.jpg?w=64&h=64&crop=1"
+
+    },
+    {
+        id: 2,
+        weather: "winter weather",
+        headline: "Snow squalls to create dangerous conditions in Northeast, Midwest",
+        time: "27min ago",
+        img: "https://cms.accuweather.com/wp-content/uploads/2022/02/alex.gif?w=64&h=64&crop=1"
+    },
+    {
+        id: 3,
+        weather: "winter weather",
+        headline: "Minneapolis was briefly colder than Mars as wintry weather expands",
+        time: "14hours ago",
+        img: "	https://cms.accuweather.com/wp-content/uploads/2025/12/AP18320766289437.jpg?w=64&h=64&crop=1"
+    },
+    // {
+    //     id: 4,
+    //     weather: "winter weather",
+    //     headline: "Where will late-week rainstorm turn into snow, ice in the eastern US?",
+    //     time: "30min ago",
+    //     img: "https://cms.accuweather.com/wp-content/uploads/2025/12/page-3_729a3d.jpg?w=64&h=64&crop=1"
+
+    // }
+]
+
 async function fetchWeather(city) {
     let data = undefined;
 
@@ -54,11 +87,14 @@ async function fetchWeather(city) {
             text = "It's getting hot. Stay hydrated.."
             img = 'https://images.unsplash.com/photo-1651407295090-d5153b835c4d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEJyaWdodCUyMHN1biUyMHdpdGglMjBhJTIwc2xpZ2h0JTIwaGF6ZSUyMG9yJTIwbGlnaHQlMjB3aXNwcyUyMG9mJTIwY2xvdWRzLnxlbnwwfHwwfHx8MA%3D%3D';
 
-        } else if (data.main.feels_like < 35) {
+        } else {
             text = "Hot weather! Take precautions."
             img = 'https://images.unsplash.com/photo-1447601932606-2b63e2e64331?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SGFyc2glMkMlMjBnbGFyaW5nJTIwc3VubGlnaHQlMkMlMjBtaXJhZ2UlMjBlZmZlY3RzJTIwb3ZlciUyMGFzcGhhbHQlMjBvciUyMGJhcnJlbnxlbnwwfHwwfHx8MA%3D%3D';
-
         }
+
+        document.getElementById("stories").style.display="none";
+        document.getElementById("welcome").style.display="none";
+
         document.getElementById('main-card-min2').style.display = "flex";
         document.getElementById('tempdesc').textContent = text;
         document.getElementById('main-card').style.backgroundImage = `url(${img})`;
@@ -95,6 +131,7 @@ async function fetchWeather(city) {
         document.getElementById("errormessage").textContent = error;
         console.error('There was a problem with the fetch operation:', error);
 
+        document.getElementById("stories").style.display="flex";
 
 
         // Clear previous weather data from UI
@@ -146,3 +183,24 @@ function sidenav(id) {
     document.getElementById(id).style.borderRight = " 4px solid black";
 
 }
+
+
+function onLoad() {
+    document.getElementById('stories').innerHTML +=stories.map((item) => {
+            return `
+                <div class="story">
+                    <div id="story-comp1">
+                        <p>${item.weather}</p>
+                        <h4>${item.headline}</h4>
+                        <p>${item.time}</p>
+                    </div>
+                    <div id="story-comp2">
+                        <img src=${item.img} alt="" />
+                    </div>
+                </div>
+            `
+        }).join("");
+
+    }
+
+onLoad();

@@ -1,81 +1,40 @@
 main {
     display: flex;
     align-items: stretch;
-    min-height: 100vh;
+    background-color: rgb(190, 219, 210);
 
-}
-
-h5 {
-    font-size: 2vh;
-
-}
-
-h3 {
-    font-size: 2vh;
 }
 
 p {
-    font-size: 2em;
+    font-size: 2vmax;
 
 }
 
-/* 
-------------------------------------
------------------------------------- */
-
-#main-cont-1 {
-    flex: 1;
-
-    flex-basis: 15%;
-    min-height: 100vh;
+/* --------------------------------
+-------------------------------- */
+nav {
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-    border: 1px solid rgb(192, 192, 192);
+    height: 5vmax;
+}
+/* ----------------------------------- */
+nav img {
+    height: 5vmax;
+    width: 5vmax;
 }
 
 #logo {
     display: flex;
-    gap: 20px;
+    gap: 2vmax;
     align-items: center;
+    flex-basis: 15%;
 }
-
-#main-cont-1 img {
-    height: 50px;
-    width: 50px;
-}
-
-#main-cont-1 button {
-    font-size: 1.4em;
-}
-
-/* ------------------------------------- */
-
-.sidenav {
-    width: 100%;
-}
-
-.sidenav button {
-    width: 100%;
-    background-color: white;
-    cursor: pointer;
-    border: none;
-}
-
-/* -------------------------------------
----------------------------------------- */
-#main-cont-2 {
-    flex: 1;
-    flex-basis: 45%;
-    min-height: 100vh;
-    position: relative;
-}
-
 /* --------------------------------------- */
+
 #searchbar-cont {
+     box-sizing: border-box;
+    flex-basis: 85%;
+    padding: 1.5vmax;
     width: 100%;
-    margin-top: 25px;
     display: flex;
     justify-content: center;
     /* position: absolute; */
@@ -96,7 +55,7 @@ p {
     border-radius: 25px;
     /* font-family: 'Font Awesome 5 Free', Arial; */
     font-weight: 400;
-    font-size: 1.5em;
+    font-size: 1vmax;
 
 }
 
@@ -112,12 +71,60 @@ p {
     height: 100%;
     border: none;
     cursor: pointer;
-    margin-left: 1%;
     margin-right: 10%;
-    font-size: 1.5em;
+    font-size: 1vmax;
 }
 
 /* ------------------------------------------- */
+
+
+
+
+/* 
+------------------------------------
+------------------------------------ */
+
+#main-cont-1 {
+    flex: 1;
+    flex-basis: 15%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 50px;
+    background-color: #fff;
+    border-right: 1px solid rgb(192, 192, 192);
+}
+
+/* ------------------------------------- */
+
+.sidenav {
+    width: 100%;
+    margin-top: 2vmax;
+}
+
+.sidenav button {
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1.5vmax;
+
+}
+
+/* -------------------------------------
+---------------------------------------- */
+#main-cont-2 {
+    flex: 1;
+    flex-basis: 45%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ----------------------------------- */
 
 #main-card {
     width: 50%;
@@ -144,7 +151,7 @@ p {
 }
 
 #temp {
-    font-size: 4em;
+    font-size: 5vmax;
 }
 
 /* ------------------------------------------------ */
@@ -167,12 +174,20 @@ p {
 
 /* --------------------------------------------- */
 
+#welcome {
+    display: flex;
+    justify-content: center;
+}
+
+/* ------------------------------------------------ */
 #components {
     display: none;
     grid-template-rows: 0.5fr 0.5fr;
     grid-template-columns: 0.5fr 0.5fr;
     gap: 5%;
-    margin: 10% 5%;
+    margin: 5% 5%;
+    box-sizing: border-box;
+
 
 }
 
@@ -194,17 +209,71 @@ p {
     margin-top: 1vh;
 }
 
-.c1 h5{
+.c1 h5 {
     font-size: 3vh;
 }
 
-.c1 p{
+.c1 p {
     font-size: 3vh;
 }
+
 /* ----------------------------------------
 ---------------------------------------- */
 #main-cont-3 {
+    box-sizing: border-box;
     flex: 1;
     flex-basis: 40%;
-    min-height: 100vh;
+    background-color: #fff;
+    margin: 5vh 5vh;
+    border-radius: 25px;
+}
+
+/* -------------------------------------------------------- */
+#stories {
+    display: flex;
+    flex-direction: column;
+}
+
+#stories h2 {
+    text-align: center;
+    padding: 2vh;
+    margin-bottom: 5vh;
+    border-bottom: 2px solid;
+}
+
+.story {
+    display: flex;
+    border-bottom: 1px solid black;
+    padding: 4vh 0vh;
+}
+
+#story-comp1 {
+    flex-basis: 70%;
+    padding-left: 5vh;
+}
+
+#story-comp1 * {
+    margin: 0px;
+    padding: 0px;
+}
+
+#story-comp1 h4 {
+    font-size: small;
+}
+
+#story-comp1 p {
+    font-size: small;
+    color: rgb(128, 128, 128);
+}
+
+
+#story-comp2 {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#story-comp2 img {
+    border-radius: 10px;
 }
