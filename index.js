@@ -185,17 +185,6 @@ function sidenav(id) {
 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('searchForm').addEventListener('submit', searchTrigger);
-
-        // Sidenav handlers
-    ['dashboard', 'map', 'savedloc', 'logout'].forEach(id => {
-        document.getElementById(id).addEventListener('click', () => sidenav(id));
-    });
-});
-
-
-
 function onLoad() {
     document.getElementById('stories').innerHTML +=stories.map((item) => {
             return `
@@ -211,7 +200,18 @@ function onLoad() {
                 </div>
             `
         }).join("");
-
     }
 
-onLoad();
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('searchForm').addEventListener('submit', searchTrigger);
+
+        // Sidenav handlers
+    ['dashboard', 'map', 'savedloc', 'logout'].forEach(id => {
+        document.getElementById(id).addEventListener('click', () => sidenav(id));
+    });
+
+    onLoad();
+
+});
+
+
