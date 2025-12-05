@@ -1,6 +1,5 @@
 import {apiKey} from './api.js';     // Default import
 
-console.log("THe api is ", apiKey);
 document.getElementById('dashboard').style.borderRight = " 4px solid black";
 
 let stories = [
@@ -42,12 +41,10 @@ async function fetchWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKey}`;
 
     try {
-        console.log("function invoked");
         
         document.getElementById("error").style.display = "none";
 
         const response = await fetch(url);
-        console.log("the response is ",response);
         
         if (response.status == 401) {
             throw new Error("Network Issues Come again later ..")
