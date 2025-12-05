@@ -170,7 +170,6 @@ async function fetchWeather(city) {
 
 function searchTrigger(event) {
     event.preventDefault();
-    console.log("search trigger is clicked");
     
     let city = document.getElementById("search").value;
     console.log("the city val is ", city);
@@ -191,6 +190,11 @@ function sidenav(id) {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('searchForm').addEventListener('submit', searchTrigger);
+
+        // Sidenav handlers
+    ['dashboard', 'map', 'savedloc', 'logout'].forEach(id => {
+        document.getElementById(id).addEventListener('click', () => sidenav(id));
+    });
 });
 
 
