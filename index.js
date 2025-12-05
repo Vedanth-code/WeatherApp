@@ -1,8 +1,8 @@
-console.log("Hi");
-const apiKey = '1b6a59d8ef8bf4dbe6dd40e48e9c612b';
+import {apiKey} from './api.js';     // Default import
+// const apiKey = '1b6a59d8ef8bf4dbe6dd40e48e9c612b';
 
+console.log("THe api is ", apiKey);
 document.getElementById('dashboard').style.borderRight = " 4px solid black";
-
 
 let stories = [
     {
@@ -37,15 +37,19 @@ let stories = [
     // }
 ]
 
-async function fetchWeather(city) {
+async function fetchWeather(city) { 
     let data = undefined;
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKey}`;
 
     try {
+        console.log("function invoked");
+        
         document.getElementById("error").style.display = "none";
 
         const response = await fetch(url);
+        console.log("the response is ",response);
+        
         if (response.status == 401) {
             throw new Error("Network Issues Come again later ..")
         }
@@ -57,7 +61,7 @@ async function fetchWeather(city) {
         console.log('Weather data:', data); // Process the weather data here
 
 
-        document.getElementById("locationspan").textContent = data.name;
+        document.getElementById("locationspan").textContent = data.name + ", "+data.sys.country;
         document.getElementById("date").textContent = "Today";
 
         document.getElementById("temp").textContent = data.main.temp + "\u00B0C";
@@ -167,6 +171,8 @@ async function fetchWeather(city) {
 
 function searchTrigger(event) {
     event.preventDefault();
+    console.log("search trigger is clicked");
+    
     let city = document.getElementById("search").value;
     console.log("the city val is ", city);
 
@@ -183,6 +189,11 @@ function sidenav(id) {
     document.getElementById(id).style.borderRight = " 4px solid black";
 
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('searchForm').addEventListener('submit', searchTrigger);
+});
+
 
 
 function onLoad() {
